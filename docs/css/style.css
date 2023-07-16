@@ -296,7 +296,7 @@ a:focus {
 }
 
 .page-title {
-  padding: 120px 0px 70px 0px;
+  padding: 3rem 0px 1rem 0px;
   position: relative;
 }
 .page-title .block h1 {
@@ -354,6 +354,59 @@ a:focus {
     font-size: 28px;
   }
 }
+.px-0_5rem {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+.fs-1rem {
+  font-size: 1rem !important;
+}
+
+.fs-0_8rem {
+  font-size: 0.8rem;
+}
+
+.h-30p {
+  height: 30vh;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.counter-stat span {
+  font-size: 2rem !important;
+}
+
+.testimonial-block p {
+  font-size: 1rem !important;
+}
+
+h4, .h4 {
+  font-size: 1.1rem !important;
+}
+
+.body {
+  font-size: 1rem !important;
+}
+
+.logo.mb-4 > .img-fluid {
+  max-height: 5rem !important;
+}
+
+.section {
+  padding: 2rem 0 !important;
+}
+
+.text-lg {
+  font-size: 1.5rem !important;
+}
+
+.text-white {
+  color: white;
+}
+
 #navbarmain .nav-link {
   font-weight: 600;
   padding: 15px 15px;
@@ -502,9 +555,6 @@ a:focus {
   background-size: cover;
   min-height: 550px;
 }
-.banner .block {
-  padding: 80px 0px 160px;
-}
 .banner .block h1 {
   font-size: 60px;
   line-height: 1.2;
@@ -536,6 +586,7 @@ a:focus {
     font-size: 38px;
     line-height: 50px;
   }
+
   .banner {
     min-height: 450px;
     background: #fff !important;
@@ -546,6 +597,7 @@ a:focus {
     font-size: 28px;
     line-height: 40px;
   }
+
   .banner {
     min-height: 450px;
     background: #fff !important;
@@ -556,6 +608,7 @@ a:focus {
     font-size: 56px;
     line-height: 70px;
   }
+
   .banner {
     background: #fff !important;
   }
@@ -926,6 +979,7 @@ a:focus {
   .testimonial-wrap {
     margin-left: 0px;
   }
+
   .testimonial::before {
     display: none;
   }
@@ -934,6 +988,7 @@ a:focus {
   .testimonial-wrap {
     margin-left: 0px;
   }
+
   .testimonial::before {
     display: none;
   }
@@ -942,6 +997,7 @@ a:focus {
   .testimonial-wrap {
     margin-left: 0px;
   }
+
   .testimonial::before {
     display: none;
   }
@@ -950,6 +1006,7 @@ a:focus {
   .testimonial-wrap {
     margin-left: 0px;
   }
+
   .testimonial::before {
     display: none;
   }
@@ -1300,6 +1357,33 @@ a:focus {
   position: absolute;
   right: 15px;
   top: 35%;
+}
+
+/* Added by Sohil */
+.slick-slide.item {
+  float: none;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.slick-slide {
+  margin: 0 1rem;
+}
+
+.navbar-brand > img {
+  vertical-align: 0;
+}
+
+.navbar-brand > .img-fluid {
+  max-height: 4rem;
+}
+
+.logo.mb-4 > .img-fluid {
+  max-height: 6rem;
+}
+
+.about-page p {
+  color: #74848d;
 }
 
 .footer {
