@@ -1279,6 +1279,12 @@ h4, .h4 {
 .comment-reply-form textarea, .comment-reply-form .btn-main {
   height: auto;
 }
+.map-container {
+  width: 100%;
+  height: 400px;
+  margin: 20px 0;
+  padding: 0 25px;
+}
 
 .sidebar-widget {
   margin-bottom: 30px;
