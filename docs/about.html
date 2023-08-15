@@ -113,23 +113,6 @@
 	<!-- Include the footer container -->
     <div id="footer-container"></div>
 
-	<!-- Load header content using JavaScript -->
-	<script>
-		fetch('header.html')
-			.then(response => response.text())
-			.then(data => {
-				document.getElementById('header-container').innerHTML = data;
-			});
-	</script>
-
-	 <!-- Load footer content using JavaScript -->
-	 <script>
-        fetch('footer.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('footer-container').innerHTML = data;
-            });
-    </script>
 	<script src="plugins/jquery/jquery.js"></script>
 	<script src="plugins/bootstrap/bootstrap.min.js"></script>
 	<script src="plugins/slick-carousel/slick/slick.min.js"></script>

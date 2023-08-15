@@ -5,9 +5,9 @@
  * GITHUB: https://github.com/themefisher/
  */
 
-(function ($) {
-	'use strict';
-
+document.addEventListener('DOMContentLoaded', function() {
+	(function($) {
+	  'use strict';
 	// navbarDropdown
 	if ($(window).width() < 992) {
 		$('.navigation .dropdown-toggle').on('click', function () {
@@ -216,4 +216,20 @@ $('.testimonial-wrap-2').slick({
 		});
 	}
 
-})(jQuery);
+
+}
+)(jQuery);
+ // Load header content using JavaScript fetch
+ fetch('header.html')
+ .then(response => response.text())
+ .then(data => {
+   document.getElementById('header-container').innerHTML = data;
+ });
+
+// Load footer content using JavaScript fetch
+fetch('footer.html')
+ .then(response => response.text())
+ .then(data => {
+   document.getElementById('footer-container').innerHTML = data;
+ });
+});
