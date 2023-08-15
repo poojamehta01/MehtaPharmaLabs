@@ -542,7 +542,7 @@ h4, .h4 {
 }
 
 .bg-1 {
-  background: url("../images/bg/22.jpg") no-repeat 50% 50%;
+  background: url("images/bg/22.jpg") no-repeat 50% 50%;
   background-size: cover;
   position: relative;
 }
@@ -551,9 +551,9 @@ h4, .h4 {
   position: relative;
   overflow: hidden;
   background: #fff;
-  background: url("../images/bg/slider-bg-1.jpg") no-repeat;
+  background: url("images/bg/slider-bg-1.jpg") no-repeat;
   background-size: cover;
-  min-height: 550px;
+  min-height: 300px;
 }
 .banner .block h1 {
   font-size: 60px;
@@ -865,7 +865,7 @@ h4, .h4 {
   }
 }
 .cta {
-  background: url("../images/bg/bg-4.jpg") no-repeat 50% 50%;
+  background: url("images/bg/bg-4.jpg") no-repeat 50% 50%;
   background-size: cover;
   position: relative;
 }
@@ -892,12 +892,12 @@ h4, .h4 {
 }
 
 .cta-2 {
-  background: url("../images/bg/cta-bg.png") no-repeat;
+  background: url("images/bg/cta-bg.png") no-repeat;
   background-position: center center;
 }
 
 .cta-page {
-  background: url("../images/bg/banner.jpg") no-repeat;
+  background: url("images/bg/banner.jpg") no-repeat;
   background-size: cover;
   position: relative;
 }
@@ -912,7 +912,7 @@ h4, .h4 {
   left: 0px;
   position: absolute;
   content: "";
-  background: url("../images/bg/bg-2.jpg") no-repeat 50% 50%;
+  background: url("/images/bg/bg-2.jpg") no-repeat 50% 50%;
 }
 .testimonial .slick-dots {
   text-align: left;

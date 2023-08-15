@@ -33,137 +33,138 @@
     return false;
   });
 
-	$('.portfolio-single-slider').slick({
-		infinite: true,
-		arrows: false,
-		autoplay: true,
-		autoplaySpeed: 2000
-	});
+	
+  $('.portfolio-single-slider').slick({
+	infinite: true,
+	arrows: false,
+	autoplay: true,
+	autoplaySpeed: 2000
+});
 
-	$('.brands-logo').slick({
-		infinite: true,
-		arrows: false,
-		autoplay: true,
-		slidesToShow: 6,
-		slidesToScroll: 1,
-		autoplaySpeed: 1000,
-		responsive: [
-		    {
-		      breakpoint: 1024,
-		      settings: {
-		        slidesToShow:6,
-		        slidesToScroll: 6,
-		        infinite: true,
-		        dots: true
-		      }
-		    },
-		    {
-		      breakpoint: 900,
-		      settings: {
-		        slidesToShow:4,
-		        slidesToScroll: 4
-		      }
-		    },{
-		      breakpoint: 600,
-		      settings: {
-		        slidesToShow: 4,
-		        slidesToScroll: 4
-		      }
-		    },
-		    {
-		      breakpoint: 480,
-		      settings: {
-		        slidesToShow: 2,
-		        slidesToScroll: 2
-		      }
-		    }
-		  
-  		]
-	});
+$('.brands-logo').slick({
+	infinite: true,
+	arrows: false,
+	autoplay: true,
+	slidesToShow: 6,
+	slidesToScroll: 1,
+	autoplaySpeed: 1000,
+	responsive: [
+		{
+		  breakpoint: 1024,
+		  settings: {
+			slidesToShow:6,
+			slidesToScroll: 6,
+			infinite: true,
+			dots: true
+		  }
+		},
+		{
+		  breakpoint: 900,
+		  settings: {
+			slidesToShow:4,
+			slidesToScroll: 4
+		  }
+		},{
+		  breakpoint: 600,
+		  settings: {
+			slidesToShow: 4,
+			slidesToScroll: 4
+		  }
+		},
+		{
+		  breakpoint: 480,
+		  settings: {
+			slidesToShow: 2,
+			slidesToScroll: 2
+		  }
+		}
+	  
+	  ]
+});
 
-	$('.testimonial-wrap').slick({
-		slidesToShow: 1,
-		slidesToScroll: 1,
-		infinite: true,
-		dots: true,
-		arrows: false,
-		autoplay: true,
-		vertical: true,
-		verticalSwiping: true,
-		autoplaySpeed: 6000,
-		responsive: [{
-				breakpoint: 1024,
-				settings: {
-					slidesToShow: 1,
-					slidesToScroll: 1,
-					infinite: true,
-					dots: true
-				}
-			},
-			{
-				breakpoint: 900,
-				settings: {
-					slidesToShow: 1,
-					slidesToScroll: 1
-				}
-			}, {
-				breakpoint: 600,
-				settings: {
-					slidesToShow: 1,
-					slidesToScroll: 1
-				}
-			},
-			{
-				breakpoint: 480,
-				settings: {
-					slidesToShow: 1,
-					slidesToScroll: 1
-				}
+$('.testimonial-wrap').slick({
+	slidesToShow: 1,
+	slidesToScroll: 1,
+	infinite: true,
+	dots: true,
+	arrows: false,
+	autoplay: true,
+	vertical: true,
+	verticalSwiping: true,
+	autoplaySpeed: 6000,
+	responsive: [{
+			breakpoint: 1024,
+			settings: {
+				slidesToShow: 1,
+				slidesToScroll: 1,
+				infinite: true,
+				dots: true
 			}
-
-		]
-	});
-
-	$('.testimonial-wrap-2').slick({
-		slidesToShow: 2,
-		slidesToScroll: 2,
-		infinite: true,
-		dots: true,
-		arrows: false,
-		autoplay: true,
-		autoplaySpeed: 6000,
-		responsive: [{
-				breakpoint: 1024,
-				settings: {
-					slidesToShow: 2,
-					slidesToScroll: 2,
-					infinite: true,
-					dots: true
-				}
-			},
-			{
-				breakpoint: 900,
-				settings: {
-					slidesToShow: 1,
-					slidesToScroll: 1
-				}
-			}, {
-				breakpoint: 600,
-				settings: {
-					slidesToShow: 1,
-					slidesToScroll: 1
-				}
-			},
-			{
-				breakpoint: 480,
-				settings: {
-					slidesToShow: 1,
-					slidesToScroll: 1
-				}
+		},
+		{
+			breakpoint: 900,
+			settings: {
+				slidesToShow: 1,
+				slidesToScroll: 1
 			}
+		}, {
+			breakpoint: 600,
+			settings: {
+				slidesToShow: 1,
+				slidesToScroll: 1
+			}
+		},
+		{
+			breakpoint: 480,
+			settings: {
+				slidesToShow: 1,
+				slidesToScroll: 1
+			}
+		}
 
-		]
-	});
+	]
+});
+
+$('.testimonial-wrap-2').slick({
+	slidesToShow: 2,
+	slidesToScroll: 2,
+	infinite: true,
+	dots: true,
+	arrows: false,
+	autoplay: true,
+	autoplaySpeed: 6000,
+	responsive: [{
+			breakpoint: 1024,
+			settings: {
+				slidesToShow: 2,
+				slidesToScroll: 2,
+				infinite: true,
+				dots: true
+			}
+		},
+		{
+			breakpoint: 900,
+			settings: {
+				slidesToShow: 1,
+				slidesToScroll: 1
+			}
+		}, {
+			breakpoint: 600,
+			settings: {
+				slidesToShow: 1,
+				slidesToScroll: 1
+			}
+		},
+		{
+			breakpoint: 480,
+			settings: {
+				slidesToShow: 1,
+				slidesToScroll: 1
+			}
+		}
+
+	]
+});
 
 
 	// counter
