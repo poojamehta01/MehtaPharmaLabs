@@ -285,5 +285,14 @@ document.addEventListener('DOMContentLoaded', function () {
 			setActiveLink();
 		});
 
+	var map = L.map('map').setView([latitude, longitude], 15);
+	L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+		maxZoom: 19,
+		attribution: 'Map data © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+	}).addTo(map);
+	L.marker([latitude, longitude]).addTo(map)
+		.bindPopup('Your Location')
+		.openPopup();
+
 });
 

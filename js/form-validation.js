@@ -1,23 +1,21 @@
-document.addEventListener('DOMContentLoaded', function () {
-    const form = document.getElementById('contact-form');
-    const submitButton = document.getElementById('submitBtn');
-    const requiredFields = form.querySelectorAll('[required]');
+ // Add a submit event listener to the form
+  const contactForm = document.getElementById("contact-form");
+  const countryCodeDropdown = document.getElementById("countryCode");
 
-    function checkRequiredFields() {
-      let allFieldsFilled = true;
-      requiredFields.forEach(field => {
-        if (field.value.trim() === '') {
-          allFieldsFilled = false;
-        }
-      });
-      return allFieldsFilled;
+  contactForm.addEventListener("submit", function (event) {
+    if (!validateFields()) {
+      event.preventDefault();
     }
-
-    form.addEventListener('input', function () {
-      if (checkRequiredFields()) {
-        submitButton.removeAttribute('disabled');
-      } else {
-        submitButton.setAttribute('disabled', 'disabled');
-      }
-    });
   });
+
+  function validateFields() {
+    const nameField = document.getElementById("name");
+    const emailField = document.getElementById("email");
+    const subjectField = document.getElementById("subject");
+    const phoneField = document.getElementById("phone");
+    
+    if (!nameField.value || !emailField.value || !subjectField.value || !phoneField.value) {
+      alert("Please fill in all required fields.");
+      return false;
+    }
+  }});

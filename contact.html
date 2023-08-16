@@ -99,9 +99,9 @@
       <div class="row justify-content-center">
         <div class="col-lg-6">
           <div class="section-title text-center">
-            <h2 class="text-md mb-2">Contact us</h2>
+            <h2 class="text-md mb-2">Contact Us</h2>
             <div class="divider mx-auto my-4"></div>
-            <p class="mb-5">For all enquiries, please email us using the form below.</p>
+            <p class="mb-5">For all inquiries, please email us using the form below.</p>
           </div>
         </div>
       </div>
@@ -114,13 +114,16 @@
                 <div class="alert alert-success contact__msg" style="display: none" role="alert">
                   Your message was sent successfully.
                 </div>
+                <div class="alert alert-danger contact__msg" style="display: none" role="alert">
+                  There was an error sending your message. Please try again.
+                </div>
               </div>
             </div>
 
             <div class="row">
               <div class="col-lg-6">
                 <div class="form-group">
-                  <input name="name" id="name" type="text" class="form-control" placeholder="Your Full Name">
+                  <input name="name" id="name" type="text" class="form-control" placeholder="Your Full Name " required>
                 </div>
               </div>
 
@@ -140,18 +143,18 @@
                 <div class="form-group">
                   <input name="phone" id="phone" type="text" class="form-control" placeholder="Your Phone Number"
                     required>
+                    </div>
                 </div>
               </div>
-            </div>
 
-            <div class="form-group-2 mb-4">
-              <textarea name="message" id="message" class="form-control" rows="8" placeholder="Your Message"
-                required></textarea>
-            </div>
+              <div class="form-group-2 mb-4">
+                <textarea name="message" id="message" class="form-control" rows="8" placeholder="Your Message"
+                  required></textarea>
+              </div>
 
-            <div>
-              <input class="btn btn-main btn-round-full" name="submit" type="submit" value="Send Messege"></input>
-            </div>
+              <div>
+                <input class="btn btn-main btn-round-full" name="submit" type="submit" value="Send Messege"></input>
+              </div>
           </form>
         </div>
       </div>
@@ -169,15 +172,15 @@
         </div>
       </div>
       <div style="text-align: center;">
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.452697041917!2d78.39076592375736!3d17.43803374982052!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb9144cdba8c47%3A0x937fe346f411a645!2sTutorials%20Point%20(India)%20Ltd.!5e0!3m2!1sen!2sin!4v1673629212535!5m2!1sen!2sin"
-        width="800" height="500" style="border:0;" allowfullscreen="" loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade">
-      </iframe>
-    </div>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.452697041917!2d78.39076592375736!3d17.43803374982052!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb9144cdba8c47%3A0x937fe346f411a645!2sTutorials%20Point%20(India)%20Ltd.!5e0!3m2!1sen!2sin!4v1673629212535!5m2!1sen!2sin"
+          width="800" height="500" style="border:0;" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
     </div>
   </section>
- 
+
   <!-- <div class="google-map "> -->
   <!-- <div class="map-container">
       <h5 class=""title-color">Find us here!!</h5>
@@ -187,26 +190,32 @@
         referrerpolicy="no-referrer-when-downgrade">
       </iframe>
     </div> -->
-    <!-- </div> -->
+  <!-- </div> -->
 
-    <!-- Include the footer container -->
-    <div id="footer-container"></div>
+  <!-- Include the footer container -->
+  <div id="footer-container"></div>
 
-    <!-- 
+  <!-- 
     Essential Scripts
     =====================================-->
-    <script src="plugins/jquery/jquery.js"></script>
-    <script src="plugins/bootstrap/bootstrap.min.js"></script>
-    <script src="plugins/slick-carousel/slick/slick.min.js"></script>
-    <script src="plugins/shuffle/shuffle.min.js"></script>
+  <script src="plugins/jquery/jquery.js"></script>
+  <script src="plugins/bootstrap/bootstrap.min.js"></script>
+  <script src="plugins/slick-carousel/slick/slick.min.js"></script>
+  <script src="plugins/shuffle/shuffle.min.js"></script>
 
 
-    <!-- Google Map -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAkeLMlsiwzp6b3Gnaxd86lvakimwGA6UA"></script>
-    <script src="plugins/google-map/gmap.js"></script>
+  <!-- Google Map -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAkeLMlsiwzp6b3Gnaxd86lvakimwGA6UA"></script>
+  <script src="plugins/google-map/gmap.js"></script>
 
-    <script src="js/script.js"></script>
-    <script src="js/form-validation.js"></script>
+  <script src="js/script.js"></script>
+  <script src="js/form-validation.js"></script>
+
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.13/css/intlTelInput.min.css">
+  <script src="js/getCountryCodes.js"></script>
+
+
 </body>
 
 </html>
