@@ -236,20 +236,40 @@ document.addEventListener('DOMContentLoaded', function () {
 			document.getElementById('footer-container').innerHTML = data;
 		});
 
-	const currentLocation = window.location.pathname;
-	console.log("currentLocation", currentLocation)
-	const navigationLinks = document.querySelectorAll('.navbar-nav .nav-item');
-	console.log("navigationLinks", navigationLinks)
-	navigationLinks.forEach(link => {
-		const linkHref = link.querySelector('.nav-link').getAttribute('href');
-		console.log("linkHref:", linkHref); // Debugging line
-		console.log("currentLocation:", currentLocation); // Debugging line
-
-		if (currentLocation.endsWith(linkHref)) {
-			link.classList.add('active');
-		} else {
-			link.classList.remove('active');
+		function setActiveLink() {
+			// Get the current location
+			const currentLocation = window.location.pathname;
+		
+			// Get all navigation links
+			const navigationLinks = document.querySelectorAll('.nav-item .nav-link');
+			const navigationItems = document.querySelectorAll('.nav-item');
+		
+			// Loop through the links and find the one with a matching href
+			for (const link of navigationLinks) {
+				const linkHref = link.getAttribute('href');
+		
+				// Normalize linkHref and currentLocation to remove trailing slashes
+				const normalizedCurrentLocation = currentLocation.replace(/^\/|\/$/g, ''); // Remove leading and trailing slashes
+			
+				if (normalizedCurrentLocation===linkHref) {
+					link.parentNode.classList.add('active');					
+					console.log("heyy")
+					console.log("link.parentNode",link.parentNode)
+				}
+			}
 		}
+		
+
+        // Load header content using JavaScript fetch
+        fetch('header.html')
+            .then(response => response.text())
+            .then(data => {
+                // Insert the fetched header content into the header-container
+                document.getElementById('header-container').innerHTML = data;
+
+                // Call the setActiveLink function after loading the header
+                setActiveLink();
+            });
+
 	});
 
-});
