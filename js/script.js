@@ -236,40 +236,54 @@ document.addEventListener('DOMContentLoaded', function () {
 			document.getElementById('footer-container').innerHTML = data;
 		});
 
-		function setActiveLink() {
-			// Get the current location
-			const currentLocation = window.location.pathname;
-		
-			// Get all navigation links
-			const navigationLinks = document.querySelectorAll('.nav-item .nav-link');
-			const navigationItems = document.querySelectorAll('.nav-item');
-		
-			// Loop through the links and find the one with a matching href
-			for (const link of navigationLinks) {
-				const linkHref = link.getAttribute('href');
-		
-				// Normalize linkHref and currentLocation to remove trailing slashes
-				const normalizedCurrentLocation = currentLocation.replace(/^\/|\/$/g, ''); // Remove leading and trailing slashes
-			
-				if (normalizedCurrentLocation===linkHref) {
-					link.parentNode.classList.add('active');					
-					console.log("heyy")
-					console.log("link.parentNode",link.parentNode)
-				}
+	function setActiveLink() {
+		// Get the current location
+		const currentLocation = window.location.pathname;
+
+		// Get all navigation items (including dropdowns)
+		const navigationItems = document.querySelectorAll('.nav-item');
+
+
+		// Loop through the items and find the one with a matching href
+		for (const item of navigationItems) {
+
+			const link = item.querySelector('.nav-link');
+			if (!link) {
+				continue; // Skip items without a link
+			}
+
+			const linkHref = link.getAttribute('href');
+
+			// Normalize linkHref and currentLocation to remove trailing slashes
+			const normalizedCurrentLocation = currentLocation.replace(/^\/|\/$/g, ''); // Remove leading and trailing slashes
+			const normalizedLinkHref = linkHref ? linkHref.replace(/^\/|\/$/g, '') : null; // Remove leading and trailing slashes
+
+			if (normalizedCurrentLocation === normalizedLinkHref) {
+				// Remove "active" class from all navigation items
+				navigationItems.forEach(otherItem => {
+					otherItem.classList.remove('active');
+				});
+
+				// Add "active" class to the selected item
+				item.classList.add('active');
+
+				break; // Exit the loop after setting one "active" class
+			} else if (normalizedLinkHref === null && item.classList.contains('dropdown')) {
+				// For dropdown items, add "active" class
+				item.classList.add('active');
 			}
 		}
-		
+	}
 
-        // Load header content using JavaScript fetch
-        fetch('header.html')
-            .then(response => response.text())
-            .then(data => {
-                // Insert the fetched header content into the header-container
-                document.getElementById('header-container').innerHTML = data;
+	// Fetch the header content and set the active link
+	fetch('header.html')
+		.then(response => response.text())
+		.then(data => {
+			document.getElementById('header-container').innerHTML = data;
 
-                // Call the setActiveLink function after loading the header
-                setActiveLink();
-            });
+			// Call setActiveLink with the current location (e.g., "/index.html")
+			setActiveLink();
+		});
 
-	});
+});
 
