@@ -7,7 +7,7 @@
 console.log("Script is running");
 document.addEventListener('DOMContentLoaded', function () {
 	(function ($) {
-		
+
 
 		'use strict';
 		// navbarDropdown
@@ -237,12 +237,14 @@ document.addEventListener('DOMContentLoaded', function () {
 		});
 
 	const currentLocation = window.location.pathname;
-	console.log("currentLocation",currentLocation)
+	console.log("currentLocation", currentLocation)
 	const navigationLinks = document.querySelectorAll('.navbar-nav .nav-item');
-	console.log("navigationLinks",navigationLinks)
+	console.log("navigationLinks", navigationLinks)
 	navigationLinks.forEach(link => {
 		const linkHref = link.querySelector('.nav-link').getAttribute('href');
-		console.log("linkHref",linkHref)
+		console.log("linkHref:", linkHref); // Debugging line
+		console.log("currentLocation:", currentLocation); // Debugging line
+
 		if (currentLocation.endsWith(linkHref)) {
 			link.classList.add('active');
 		} else {
