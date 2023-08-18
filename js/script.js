@@ -239,9 +239,11 @@ document.addEventListener('DOMContentLoaded', function () {
 	function setActiveLink() {
 		// Get the current location
 		const currentLocation = window.location.pathname;
+		console.log("currentLocation",currentLocation)
 
 		// Get all navigation items (including dropdowns)
 		const navigationItems = document.querySelectorAll('.nav-item');
+		console.log("navigationItems",navigationItems)
 
 
 		// Loop through the items and find the one with a matching href
@@ -257,7 +259,8 @@ document.addEventListener('DOMContentLoaded', function () {
 			// Normalize linkHref and currentLocation to remove trailing slashes
 			const normalizedCurrentLocation = currentLocation.replace(/^\/|\/$/g, ''); // Remove leading and trailing slashes
 			const normalizedLinkHref = linkHref ? linkHref.replace(/^\/|\/$/g, '') : null; // Remove leading and trailing slashes
-
+			console.log("normalizedCurrentLocation",normalizedCurrentLocation)
+			console.log("normalizedLinkHref",normalizedLinkHref)
 			if (normalizedCurrentLocation === normalizedLinkHref) {
 				// Remove "active" class from all navigation items
 				navigationItems.forEach(otherItem => {
