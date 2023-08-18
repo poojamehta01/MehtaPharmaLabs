@@ -583,30 +583,30 @@ h4, .h4 {
 
 @media (max-width: 480px) {
   .banner .block h1 {
-    font-size: 38px;
-    line-height: 50px;
-  }
-
-  .banner {
-    min-height: 450px;
-    background: #fff !important;
-  }
-}
-@media (max-width: 400px) {
-  .banner .block h1 {
     font-size: 28px;
     line-height: 40px;
   }
 
   .banner {
-    min-height: 450px;
+    min-height: 350px;
+    background: #fff !important;
+  }
+}
+@media (max-width: 400px) {
+  .banner .block h1 {
+    font-size: 18px;
+    line-height: 30px;
+  }
+
+  .banner {
+    min-height: 350px;
     background: #fff !important;
   }
 }
 @media (max-width: 768px) {
   .banner .block h1 {
-    font-size: 56px;
-    line-height: 70px;
+    font-size: 46px;
+    line-height: 60px;
   }
 
   .banner {
