@@ -553,7 +553,7 @@ h4, .h4 {
   background: #fff;
   background: url("images/bg/slider-bg-1.jpg") no-repeat;
   background-size: cover;
-  min-height: 300px;
+  min-height: 200px;
 }
 .banner .block h1 {
   font-size: 50px;
