@@ -262,6 +262,7 @@ document.addEventListener('DOMContentLoaded', function () {
 			console.log("normalizedCurrentLocation",normalizedCurrentLocation)
 			console.log("normalizedLinkHref",normalizedLinkHref)
 			if (normalizedCurrentLocation === normalizedLinkHref) {
+				console.log("inside if loop")
 				// Remove "active" class from all navigation items
 				navigationItems.forEach(otherItem => {
 					otherItem.classList.remove('active');
@@ -269,11 +270,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
 				// Add "active" class to the selected item
 				item.classList.add('active');
+				console.log("item classList",item.classList)
+
 
 				break; // Exit the loop after setting one "active" class
 			} else if (normalizedLinkHref === null && item.classList.contains('dropdown')) {
+				console.log("inside else loop - PRODUCT")
 				// For dropdown items, add "active" class
 				item.classList.add('active');
+				console.log("item classList producy",item.classList)
 			}
 		}
 	}
