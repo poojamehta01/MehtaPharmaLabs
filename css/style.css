@@ -556,7 +556,7 @@ h4, .h4 {
   min-height: 300px;
 }
 .banner .block h1 {
-  /* font-size: 50px; */
+  font-size: 50px;
   line-height: 1.2;
   letter-spacing: -1.2px;
   text-transform: capitalize;
@@ -605,8 +605,8 @@ h4, .h4 {
 }
 @media (max-width: 768px) {
   .banner .block h1 {
-    font-size: 56px;
-    line-height: 70px;
+    font-size: 46px;
+    line-height: 60px;
   }
 
   .banner {
