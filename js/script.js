@@ -201,7 +201,6 @@ document.addEventListener('DOMContentLoaded', function () {
 			counter();
 		});
 
-
 		// Shuffle js filter and masonry
 		if ($('.shuffle-wrapper').length !== 0) {
 			var Shuffle = window.Shuffle;
