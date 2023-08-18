@@ -588,7 +588,7 @@ h4, .h4 {
   }
 
   .banner {
-    min-height: 500;
+    min-height: 400;
     background: #fff !important;
   }
 }
