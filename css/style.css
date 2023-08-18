@@ -605,8 +605,8 @@ h4, .h4 {
 }
 @media (max-width: 768px) {
   .banner .block h1 {
-    font-size: 46px;
-    line-height: 60px;
+    font-size: 36px;
+    line-height: 50px;
   }
 
   .banner {
