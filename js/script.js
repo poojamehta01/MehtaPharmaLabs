@@ -261,7 +261,7 @@ document.addEventListener('DOMContentLoaded', function () {
 			const normalizedLinkHref = linkHref ? linkHref.replace(/^\/|\/$/g, '') : null; // Remove leading and trailing slashes
 			console.log("normalizedCurrentLocation",normalizedCurrentLocation)
 			console.log("normalizedLinkHref",normalizedLinkHref)
-			if (normalizedCurrentLocation === normalizedLinkHref) {
+			if (normalizedCurrentLocation.endsWith(normalizedLinkHref)) {
 				console.log("inside if loop")
 				// Remove "active" class from all navigation items
 				navigationItems.forEach(otherItem => {
