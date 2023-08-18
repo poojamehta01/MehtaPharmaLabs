@@ -553,10 +553,10 @@ h4, .h4 {
   background: #fff;
   /* background: url("../images/bg/slider-bg-1.jpg") no-repeat; */
   background-size: cover;
-  min-height: 450px;
+  min-height: 550px;
 }
 .banner .block h1 {
-  font-size: 50px;
+  font-size: 60px;
   line-height: 1.2;
   letter-spacing: -1.2px;
   text-transform: capitalize;
@@ -583,30 +583,30 @@ h4, .h4 {
 
 @media (max-width: 480px) {
   .banner .block h1 {
-    font-size: 28px;
-    line-height: 40px;
+    font-size: 38px;
+    line-height: 50px;
   }
 
   .banner {
-    min-height: 400px;
+    min-height: 450px;
     background: #fff !important;
   }
 }
 @media (max-width: 400px) {
   .banner .block h1 {
-    font-size: 18px;
-    line-height: 30px;
+    font-size: 28px;
+    line-height: 40px;
   }
 
   .banner {
-    min-height: 550px; 
+    min-height: 450px;
     background: #fff !important;
   }
 }
 @media (max-width: 768px) {
   .banner .block h1 {
-    font-size: 36px;
-    line-height: 60px;
+    font-size: 56px;
+    line-height: 70px;
   }
 
   .banner {
