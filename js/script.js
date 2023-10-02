@@ -238,11 +238,11 @@ document.addEventListener('DOMContentLoaded', function () {
 	function setActiveLink() {
 		// Get the current location
 		const currentLocation = window.location.pathname;
-		console.log("currentLocation",currentLocation)
+		console.log("currentLocation", currentLocation)
 
 		// Get all navigation items (including dropdowns)
 		const navigationItems = document.querySelectorAll('.nav-item');
-		console.log("navigationItems",navigationItems)
+		console.log("navigationItems", navigationItems)
 
 
 		// Loop through the items and find the one with a matching href
@@ -258,8 +258,8 @@ document.addEventListener('DOMContentLoaded', function () {
 			// Normalize linkHref and currentLocation to remove trailing slashes
 			const normalizedCurrentLocation = currentLocation.replace(/^\/|\/$/g, ''); // Remove leading and trailing slashes
 			const normalizedLinkHref = linkHref ? linkHref.replace(/^\/|\/$/g, '') : null; // Remove leading and trailing slashes
-			console.log("normalizedCurrentLocation",normalizedCurrentLocation)
-			console.log("normalizedLinkHref",normalizedLinkHref)
+			console.log("normalizedCurrentLocation", normalizedCurrentLocation)
+			console.log("normalizedLinkHref", normalizedLinkHref)
 			if (normalizedCurrentLocation.endsWith(normalizedLinkHref)) {
 				console.log("inside if loop")
 				// Remove "active" class from all navigation items
@@ -269,7 +269,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 				// Add "active" class to the selected item
 				item.classList.add('active');
-				console.log("item classList",item.classList)
+				console.log("item classList", item.classList)
 
 
 				break; // Exit the loop after setting one "active" class
@@ -277,7 +277,7 @@ document.addEventListener('DOMContentLoaded', function () {
 				console.log("inside else loop - PRODUCT")
 				// For dropdown items, add "active" class
 				item.classList.add('active');
-				console.log("item classList producy",item.classList)
+				console.log("item classList producy", item.classList)
 			}
 		}
 	}
@@ -292,7 +292,78 @@ document.addEventListener('DOMContentLoaded', function () {
 			setActiveLink();
 		});
 
+	// Get the button and modalContainer
+	var btn = document.getElementById("requestCallbackButton");
+	var modalContainer = document.getElementById("modalContainer");
 
+	// Function to open the modal
+	function openModal() {
+		// Load the modal content from modal.html
+		fetch("modal.html")
+			.then((response) => response.text())
+			.then((modalHtml) => {
+				// Set the modal content in the modalContainer
+				modalContainer.innerHTML = modalHtml;
+				// Display the modal
+				var modal = document.getElementById("myModal");
+				modal.style.display = "block";
+			})
+			.catch((error) => {
+				console.error("Error loading modal content:", error);
+			});
+	}
+
+	// Event listener to open the modal when the button is clicked
+	btn.addEventListener("click", openModal);
+
+	// Event listener to close the modal when the close button is clicked
+	modalContainer.addEventListener("click", function (event) {
+		if (event.target.classList.contains("close")) {
+			var modal = document.getElementById("myModal");
+			modal.style.display = "none";
+			modalContainer.innerHTML = ""; // Clear modal content
+		}
+	});
+
+	document.addEventListener("DOMContentLoaded", function () {
+		document.body.addEventListener("click", function (event) {
+		  if (event.target && event.target.id === "requestCallbackButton") {
+			var modal = document.getElementById("myModal");
+			var closeModal = document.getElementById("closeModal");
+		  
+			// Open the modal
+			modal.style.display = "block";
+		  
+			// Set the default value of the input element to currentLocation
+			var medicineNameInput = document.getElementById("medicineName");
+			console.log(modal,"modal")
+			console.log(closeModal,"closeModal")
+			const currentLocation = window.location.pathname;
+		  
+			if (medicineNameInput) {
+			  medicineNameInput.value = currentLocation;
+			}
+		  
+			// Close the modal when the "x" button is clicked
+			closeModal.onclick = function () {
+			  modal.style.display = "none";
+			}
+		  
+			// Close the modal when the user clicks outside of it
+			window.onclick = function (event) {
+			  if (event.target == modal) {
+				modal.style.display = "none";
+			  }
+			}
+		  
+	}})
+});
+	
+
+
+	
+
+	  
 	// var map = L.map('map').setView([latitude, longitude], 15);
 	// L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 	// 	maxZoom: 19,

@@ -223,6 +223,131 @@ input[type=email]:focus, input[type=password]:focus, input[type=text]:focus, inp
 .section-bottom {
   padding-bottom: 100px;
 }
+/* Modal container */
+.modal {
+  display: none; /* Hide the modal by default */
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4); /* Semi-transparent background */
+  overflow: auto; /* Enable scrolling if content overflows */
+}
+
+/* Modal content */
+.modal-content {
+  background-color: #fff; /* Updated background color to white */
+  margin: 15% auto; /* 15% from the top and centered horizontally */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 70%;
+  max-width: 500px; /* Max width for the modal content */
+  box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+}
+
+/* Close button */
+.close {
+  color: #aaaaaa;
+  float: right; /* Float it to the right */
+  font-size: 28px;
+  font-weight: bold;
+  margin-left: 15px; /* Add some left margin for spacing */
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Modal content */
+.modal-content {
+  background-color: #fff; /* Updated background color to white */
+  margin: 15% auto; /* 15% from the top and centered horizontally */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 70%;
+  max-width: 500px; /* Max width for the modal content */
+  box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  position: relative; /* Add relative positioning to the modal content */
+}
+
+
+/* Close button positioning */
+.close {
+  position: absolute; /* Position it absolutely within the modal content */
+  top: 10px; /* Adjust the top position as needed */
+  right: 10px; /* Adjust the right position as needed */
+}
+
+
+/* Form styles (customize these as needed) */
+.modal-content h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+/* Styling for the <span> element */
+.modal-page span {
+  color: #003366; /* Text color for the <span> element */
+  font-size: 18px; /* Adjust font size as needed */
+  font-weight: 600; /* Adjust font weight as needed */
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+/* Style the select element */
+select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #6F8BA4; /* Use the light blue color for the border */
+  border-radius: 5px;
+  background-color: #fff;
+  color: #003366; /* Dark blue text color */
+}
+#medicineNameText {
+  color: #000; /* Set the text color */
+  font-size: 16px; /* Set the font size */
+  /* Add any other styling as needed */
+}
+
+label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+}
+
+input[type="tel"],
+input[type="number"],
+input[type="text"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+
+/* Center the submit button within its container */
+.form-group .btn {
+  display: block;
+  margin: 0 auto;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 600px) {
+  .modal-content {
+    width: 90%;
+  }
+}
+
+
 
 .subtitle {
   color: #003366;
@@ -321,6 +446,12 @@ a:focus {
     line-height: 36px;
   }
 }
+/* Add styling for the asterisk */
+.required {
+  color: rgb(223, 78, 78); /* You can adjust the color to your preference */
+  margin-left: 5px; /* Add some spacing between the label and the asterisk */
+}
+
 .title-color {
   color: #003366;
 }
@@ -653,7 +784,6 @@ h4, .h4 {
   margin-right: 10px;
   color: rgba(255, 255, 255, 0.7);
 }
-
 .appoinment-form {
   margin-top: 40px;
 }
@@ -1515,4 +1645,6 @@ h4, .h4 {
   cursor: pointer;
   opacity: 1;
 }
+
+
 /*# sourceMappingURL=style.css.map */
