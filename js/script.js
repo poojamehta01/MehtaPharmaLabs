@@ -292,10 +292,6 @@ document.addEventListener('DOMContentLoaded', function () {
 			setActiveLink();
 		});
 
-	// Get the button and modalContainer
-	var btn = document.getElementById("requestCallbackButton");
-	var modalContainer = document.getElementById("modalContainer");
-
 	// Function to open the modal
 	function openModal() {
 		// Load the modal content from modal.html
@@ -307,63 +303,66 @@ document.addEventListener('DOMContentLoaded', function () {
 				// Display the modal
 				var modal = document.getElementById("myModal");
 				modal.style.display = "block";
+
+				// Set the default value of the input element to the last part of the URL
+				var medicineNameInput = document.getElementById("medicineName");
+				const currentLocation = window.location.pathname;
+
+				if (medicineNameInput) {
+					var parts = currentLocation.split('/');
+					var lastPart = parts[parts.length - 1].replace(/\.html/g, '').replace(/_/g, ' ');
+					medicineNameInput.value = decodeURIComponent(lastPart); // Use decodeURIComponent to handle special characters
+				}
 			})
 			.catch((error) => {
 				console.error("Error loading modal content:", error);
 			});
 	}
-
 	// Event listener to open the modal when the button is clicked
+	// Get the "Request A Call Back" button element by its ID
+	var btn = document.getElementById("requestCallbackButton");
+
 	btn.addEventListener("click", openModal);
 
-	// Event listener to close the modal when the close button is clicked
-	modalContainer.addEventListener("click", function (event) {
-		if (event.target.classList.contains("close")) {
-			var modal = document.getElementById("myModal");
-			modal.style.display = "none";
-			modalContainer.innerHTML = ""; // Clear modal content
-		}
-	});
 
-	document.addEventListener("DOMContentLoaded", function () {
-		document.body.addEventListener("click", function (event) {
-		  if (event.target && event.target.id === "requestCallbackButton") {
-			var modal = document.getElementById("myModal");
-			var closeModal = document.getElementById("closeModal");
-		  
-			// Open the modal
-			modal.style.display = "block";
-		  
-			// Set the default value of the input element to currentLocation
-			var medicineNameInput = document.getElementById("medicineName");
-			console.log(modal,"modal")
-			console.log(closeModal,"closeModal")
-			const currentLocation = window.location.pathname;
-		  
-			if (medicineNameInput) {
-			  medicineNameInput.value = currentLocation;
-			}
-		  
-			// Close the modal when the "x" button is clicked
-			closeModal.onclick = function () {
-			  modal.style.display = "none";
-			}
-		  
-			// Close the modal when the user clicks outside of it
-			window.onclick = function (event) {
-			  if (event.target == modal) {
-				modal.style.display = "none";
-			  }
-			}
-		  
-	}})
+// Event listener to close the modal when the close button is clicked
+modalContainer.addEventListener("click", function (event) {
+    if (event.target.classList.contains("close")) {
+        var modal = document.getElementById("myModal");
+        modal.style.display = "none";
+        modalContainer.innerHTML = ""; // Clear modal content
+    }
 });
-	
+
+const phoneInputField = document.querySelector("#phone");
+const countryCodeDropdown = document.querySelector("#country-code-dropdown");
+
+const phoneInput = window.intlTelInput(phoneInputField, {
+  utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
+});
+
+// Populate the country code dropdown
+phoneInput.promise.then(function () {
+  const countryCodes = window.intlTelInputGlobals.getCountryData();
+  const select = document.createElement("select");
+  select.className = "custom-select";
+  countryCodes.forEach(function (country) {
+    const option = document.createElement("option");
+    option.value = country.iso2;
+    option.text = country.dialCode + " (" + country.name + ")";
+    select.appendChild(option);
+  });
+  countryCodeDropdown.appendChild(select);
+});
 
 
-	
 
-	  
+
+
+
+
+
+
 	// var map = L.map('map').setView([latitude, longitude], 15);
 	// L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 	// 	maxZoom: 19,
